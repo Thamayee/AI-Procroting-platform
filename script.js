@@ -3,6 +3,7 @@ let storedUsername="";
 let storedPassword="";
 let savedUser = localStorage.getItem("username");
 let savedPass = localStorage.getItem("password");
+let storedStudentName="";
 
 
 /* splash screen */
@@ -112,6 +113,7 @@ return;
 
 storedUsername=user;
 storedPassword=pass;
+storedStudentName = studentName;
 
 alert("Registration successful! Please login.");
 showLogin();
@@ -138,6 +140,7 @@ testsMenu.classList.add("hidden");
 
 document.getElementById("studentPage").classList.add("hidden");
 document.getElementById("dashboard").classList.remove("hidden");
+document.getElementById("welcomeUser").innerText = "Welcome " + storedStudentName;
 
 let firstLetter=user.charAt(0).toUpperCase();
 document.getElementById("profileCircle").innerText=firstLetter;
@@ -367,5 +370,6 @@ let menu=document.getElementById("testsMenu");
 if(menu){
 menu.classList.toggle("hidden");
 }
+
 
 }
