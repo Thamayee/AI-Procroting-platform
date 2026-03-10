@@ -4,6 +4,7 @@ let storedPassword="";
 let savedUser = localStorage.getItem("username");
 let savedPass = localStorage.getItem("password");
 let storedStudentName="";
+let storedProName="";
 
 
 /* splash screen */
@@ -308,6 +309,7 @@ return;
 
 proStoredUser=user;
 proStoredPass=pass;
+storedProName = name;
 
 alert("Registration successful! Please login.");
 showProLogin();
@@ -330,6 +332,9 @@ document.getElementById("proHome").classList.remove("hidden");
 
 let firstLetter=user.charAt(0).toUpperCase();
 document.getElementById("proUserCircle").innerText=firstLetter;
+
+document.getElementById("proWelcomeUser").innerText =
+"Welcome " + storedProName;
 
 }else{
 
@@ -373,3 +378,4 @@ menu.classList.toggle("hidden");
 
 
 }
+
