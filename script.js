@@ -112,8 +112,15 @@ alert("Password and Confirm Password must match!");
 return;
 }
 
-storedUsername=user;
-storedPassword=pass;
+let userData = {
+    username: user,
+    password: pass,
+    name: studentName,
+    email: email,
+    college: collegeName
+};
+
+localStorage.setItem(user, JSON.stringify(userData));
 storedStudentName = studentName;
 
 alert("Registration successful! Please login.");
